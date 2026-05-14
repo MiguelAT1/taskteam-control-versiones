@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <h1 class="text-center mb-4">TaskTeam</h1>
 
-  <div class="card shadow">
+  <div class="card shadow mb-4">
     <div class="card-body">
       <h3 class="card-title">Panel principal de tareas</h3>
       <p class="card-text">
@@ -11,6 +11,38 @@
       <button class="btn btn-primary">
         Nueva tarea
       </button>
+    </div>
+  </div>
+
+  <div class="card shadow">
+    <div class="card-body">
+      <h4 class="mb-3">Listado de tareas</h4>
+
+      <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Prioridad</th>
+          <th>Estado</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let tarea of tareas">
+          <td>{{ tarea.id }}</td>
+          <td>{{ tarea.titulo }}</td>
+          <td>{{ tarea.descripcion }}</td>
+          <td>{{ tarea.prioridad }}</td>
+          <td>
+              <span class="badge" [ngClass]="tarea.completada ? 'bg-success' : 'bg-warning text-dark'">
+                {{ tarea.completada ? 'Completada' : 'Pendiente' }}
+              </span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
