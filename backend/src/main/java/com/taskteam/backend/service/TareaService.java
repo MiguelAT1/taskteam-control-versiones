@@ -22,7 +22,7 @@ public class TareaService {
         }
 
         if (tarea.getPrioridad() == null || tarea.getPrioridad().isBlank()) {
-            tarea.setPrioridad("MEDIA");
+            tarea.setPrioridad("BAJA");
         }
 
         tarea.setId(contadorId++);
